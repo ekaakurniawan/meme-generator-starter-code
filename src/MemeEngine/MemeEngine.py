@@ -47,8 +47,10 @@ class MemeEngine():
         Returns:
             str -- file location for the output image.
         """
-        # Load and resize image
+        # Load, convert to JPEG and resize image
         img = Image.open(img_path)
+        if img.format != 'JPEG':
+            img = img.convert('RGB')
         img = self.resize_image(img, width)
 
         # Load fonts
