@@ -2,6 +2,7 @@
 Meme generator is an application that can generate meme by combining image and text from users.
 This application supports both CLI and web based requests.
 
+![sample_result](./src/tmp/542639957643155.jpg)
 
 ## Setup
 This code is tested on Python 3.6+.
