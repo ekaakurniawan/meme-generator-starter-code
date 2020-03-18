@@ -1,0 +1,1 @@
+"""Quote engine tests module."""
