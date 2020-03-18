@@ -3,6 +3,8 @@ Meme generator is an application that can generate meme by combining image and t
 This application supports both CLI and web based requests.
 
 ## Setup
+This code is tested on Python 3.6+.
+
 ### Get the Code
 ```
 $ git clone https://github.com/ekaakurniawan/meme-generator-starter-code.git
