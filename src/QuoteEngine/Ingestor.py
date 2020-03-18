@@ -18,7 +18,13 @@ class Ingestor(IngestorInterface):
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """Parse quotes from files and stores them in QuoteModel objects."""
+        """Parse quotes from files and stores them in QuoteModel objects.
+
+        Arguments:
+            path {str} -- quote file location.
+        Returns:
+            List -- list of quote objects.
+        """
         for ingestor in cls.ingestors:
             if ingestor.can_ingest(path):
                 return ingestor.parse(path)

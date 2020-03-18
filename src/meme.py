@@ -14,7 +14,7 @@ from MemeEngine import MemeEngine
 def generate_meme(path=None, body=None, author=None) -> str:
     """Generate a meme given an path and a quote.
 
-        Arguments:
+    Arguments:
         path {str} -- file location for the input image.
         body {str} -- quote body.
         author {str} -- quote author.

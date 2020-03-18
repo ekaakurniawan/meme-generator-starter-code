@@ -8,13 +8,25 @@ class QuoteModel():
     """Quote class."""
 
     def __init__(self, body: str, author: str):
-        """Initialize quote with the body and author."""
+        """Initialize quote with the body and author.
+
+        Arguments:
+            body {str} -- quote body.
+            author {str} -- quote author.
+        """
         self.body = body
         self.author = author
 
     @staticmethod
     def clean_quote(body: str, author: str):
-        """Clean quote from spaces, new line and double/single quotes."""
+        """Clean quote from spaces, new line and double/single quotes.
+
+        Arguments:
+            body {str} -- quote body.
+            author {str} -- quote author.
+        Returns:
+            tuple -- tuple of cleaned body and author.
+        """
         quotes: List[str] = ['"', "'", '”']
         body = body.strip()
         if body[0] in quotes:

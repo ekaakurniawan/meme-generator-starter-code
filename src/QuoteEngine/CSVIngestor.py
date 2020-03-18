@@ -15,7 +15,13 @@ class CSVIngestor(IngestorInterface):
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """Parse quotes from file and stores them in QuoteModel objects."""
+        """Parse quotes from file and stores them in QuoteModel objects.
+
+        Arguments:
+            path {str} -- quote file location.
+        Returns:
+            List -- list of quote objects.
+        """
         if not cls.can_ingest(path):
             raise Exception('cannot ingest exception')
 
