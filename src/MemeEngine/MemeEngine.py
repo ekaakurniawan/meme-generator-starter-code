@@ -23,8 +23,7 @@ class MemeEngine():
         self.font_path = font_path
 
     def resize_image(self, img: Image, width: int) -> Image:
-        """Resize image to maximum width argument while keeping the
-        aspect ratio.
+        """Resize image to maximum width argument while keeping the ratio.
 
         Arguments:
             img {Image} -- input image.
@@ -52,7 +51,6 @@ class MemeEngine():
         Returns:
             str -- file location for the output image.
         """
-
         # Load and resize image
         img = Image.open(img_path)
         img = self.resize_image(img, width)
@@ -63,11 +61,13 @@ class MemeEngine():
 
         # Draw quote onto image
         draw = ImageDraw.Draw(img)
-        draw.text((10, 30), f'"{text}"', font=text_font, fill='white')
-        draw.text((10, 65), f'- {author}', font=author_font, fill='white')
+        y_loc = random.randint(30, img.size[0] - 120)
+        draw.text((10, y_loc), f'"{text}"', font=text_font, fill='white')
+        draw.text((10, y_loc + 35), f'- {author}', font=author_font,
+                  fill='white')
 
         # Save result
-        out_file = f'{random.randint(0,9999999999999999)}.jpg'
+        out_file = f'{random.randint(0, 9999999999999999)}.jpg'
         out_path = f'{PROJECT_ROOT}/{self.output_directory}/{out_file}'
         img.save(out_path, "JPEG")
 
