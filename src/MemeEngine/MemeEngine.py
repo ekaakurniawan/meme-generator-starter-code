@@ -1,12 +1,8 @@
 """Meme engine module."""
 
 
-import pathlib
 import random
 from PIL import Image, ImageDraw, ImageFont
-
-
-PROJECT_ROOT = pathlib.Path(__file__).parent.parent
 
 
 class MemeEngine():
@@ -68,7 +64,7 @@ class MemeEngine():
 
         # Save result
         out_file = f'{random.randint(0, 9999999999999999)}.jpg'
-        out_path = f'{PROJECT_ROOT}/{self.output_directory}/{out_file}'
+        out_path = f'{self.output_directory}/{out_file}'
         img.save(out_path, "JPEG")
 
         return out_path
