@@ -2,6 +2,7 @@
 Meme generator is an application that can generate meme by combining image and text from users.
 This application supports both CLI and web based requests.
 
+
 ## Setup
 This code is tested on Python 3.6+.
 
@@ -50,3 +51,15 @@ Use `deactivate` command to exit from virtual environment.
 $ deactivate
 ```
 You can activate it again using `activate` command shown above.
+
+
+## Project Organization
+All codes are located in `src` directory.
+ - `MemeEngine`: Python module to make meme by combining image and quote.
+ - `QuoteEngine`: Python module to ingest quote from different file types (CSV, Docx, PDF and Text).
+ - `_data`: Directory to store images, quote files and font.
+ - `templates`: Directory to store HTML templates.
+ - `tests`: Python module for unit testing.
+ - `tmp`: Directory to store temporary files and meme result.
+ - `app.py`: Web application entry point.
+ - `meme.py`: CLI application entry point.
