@@ -79,3 +79,10 @@ $ python3 meme.py \
 ```
 $ python3 meme.py
 ```
+
+### Web Application
+Start web server using following command.
+```
+$ python3 app.py
+```
+Use web browser to access the location at `http://127.0.0.1:5000/`.
