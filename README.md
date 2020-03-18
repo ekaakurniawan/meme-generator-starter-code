@@ -63,3 +63,18 @@ All codes are located in `src` directory.
  - `tmp`: Directory to store temporary files and meme result.
  - `app.py`: Web application entry point.
  - `meme.py`: CLI application entry point.
+
+## Usage
+### CLI Application
+CLI application stores the result in `tmp` directory.
+ - Run with predefined image and quote.
+```
+$ python3 meme.py \
+  --path './_data/photos/dog/xander_1.jpg' \
+  --body 'when in doubt, run' \
+  --author 'someone from the internet'
+```
+ - Run with random image and quote.
+```
+$ python3 meme.py
+```
