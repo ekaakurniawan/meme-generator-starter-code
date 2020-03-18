@@ -57,7 +57,7 @@ class MemeEngine():
 
         # Draw quote onto image
         draw = ImageDraw.Draw(img)
-        y_loc = random.randint(30, img.size[0] - 120)
+        y_loc = random.randint(30, img.size[1] - 120)
         draw.text((10, y_loc), f'"{text}"', font=text_font, fill='white')
         draw.text((10, y_loc + 35), f'- {author}', font=author_font,
                   fill='white')
