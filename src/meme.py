@@ -1,12 +1,27 @@
+"""Meme Generator CLI Application."""
+
+
 import os
 import random
+import argparse
 
 # @TODO Import your Ingestor and MemeEngine classes
+from QuoteEngine.QuoteModel import QuoteModel
+from QuoteEngine import Ingestor
+from MemeEngine import MemeEngine
 
 
-def generate_meme(path=None, body=None, author=None):
-    """ Generate a meme given an path and a quote """
-    img = None
+def generate_meme(path=None, body=None, author=None) -> str:
+    """Generate a meme given an path and a quote.
+
+        Arguments:
+        path {str} -- file location for the input image.
+        body {str} -- quote body.
+        author {str} -- quote author.
+    Returns:
+        str -- file location for the output image.
+    """
+    img = ""
     quote = None
 
     if path is None:
@@ -17,7 +32,7 @@ def generate_meme(path=None, body=None, author=None):
 
         img = random.choice(imgs)
     else:
-        img = path[0]
+        img = path
 
     if body is None:
         quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
@@ -34,7 +49,8 @@ def generate_meme(path=None, body=None, author=None):
             raise Exception('Author Required if Body is Used')
         quote = QuoteModel(body, author)
 
-    meme = MemeEngine('./tmp')
+    font_path = './_data/fonts/LilitaOne-Regular.ttf'
+    meme = MemeEngine('./tmp', font_path)
     path = meme.make_meme(img, quote.body, quote.author)
     return path
 
@@ -44,5 +60,13 @@ if __name__ == "__main__":
     # path - path to an image file
     # body - quote body to add to the image
     # author - quote author to add to the image
-    args = None
+    parser = argparse.ArgumentParser(description='Meme Generator')
+    parser.add_argument('-p', '--path', type=str,
+                        help='Path to an image file.')
+    parser.add_argument('-b', '--body', type=str,
+                        help='Quote body to add to the image.')
+    parser.add_argument('-a', '--author', type=str,
+                        help='Quote author to add to the image.')
+    args = parser.parse_args()
+
     print(generate_meme(args.path, args.body, args.author))
