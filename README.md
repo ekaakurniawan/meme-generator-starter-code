@@ -64,13 +64,6 @@ $ python -m unittest tests.TestQuoteEngine
 $ python -m unittest tests.TestMemeEngine
 ```
 
-### Exit the Virtual Environment
-Use `deactivate` command to exit from virtual environment.
-```
-$ deactivate
-```
-You can activate it again using `activate` command shown above.
-
 
 ## Project Organization
 All codes are located in `src` directory.
@@ -104,3 +97,11 @@ Start web server using following command.
 $ python3 app.py
 ```
 Use web browser to access the location at `http://127.0.0.1:5000/`.
+
+
+## Exit Virtual Environment
+Use `deactivate` command to exit from virtual environment.
+```
+$ deactivate
+```
+You can activate it again using `activate` command shown above.
