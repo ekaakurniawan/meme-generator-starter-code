@@ -35,6 +35,24 @@ $ pip install -r requirements.txt
 $ sudo apt-get install -y xpdf
 ```
 
+### Perform Style Checking
+```
+$ pycodestyle src/
+```
+
+### Perform Type Checking
+```
+$ mypy src/
+```
+Ignore errors for skipping analyzing docx, pandas, and PIL modules as they are external packages.
+```
+src/QuoteEngine/DocxIngestor.py:5: error: Skipping analyzing 'docx': found module but no type hints or library stubs
+src/QuoteEngine/CSVIngestor.py:5: error: Skipping analyzing 'pandas': found module but no type hints or library stubs
+src/MemeEngine/MemeEngine.py:5: error: Skipping analyzing 'PIL': found module but no type hints or library stubs
+src/MemeEngine/MemeEngine.py:5: note: See https://mypy.readthedocs.io/en/latest/running_mypy.html#missing-imports
+Found 3 errors in 3 files (checked 15 source files)
+```
+
 ### Run Unit Testing
 To run unit testing, go to `src` directory.
 #### Test Quote Engine
